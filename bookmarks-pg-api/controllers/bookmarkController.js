@@ -15,15 +15,6 @@ bookmarks.get("/", async (req, res) => {
 // SHOW
 bookmarks.get("/:id", async (req, res) => {
   const { id } = req.params;
-  if (id !== typeof "number") {
-    res
-      .status(404)
-      .json({
-        error: "Invalid id",
-        message: "Please select a number for id not a text",
-      });
-    return;
-  }
   try {
     const bookmark = await getBookmark(id);
     if (bookmark["id"]) {
