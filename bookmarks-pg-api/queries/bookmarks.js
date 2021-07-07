@@ -32,10 +32,10 @@ const createBookmark = async (bookmark) => {
       throw "You must specify a value";
     }
     if (
-      bookmark.name !== typeof "string" ||
-      bookmark.url !== typeof "string" ||
-      bookmark.category !== typeof "string" ||
-      bookmark.is_favorite !== typeof "boolean"
+      typeof bookmark.name !== "string" ||
+      typeof bookmark.url !== "string" ||
+      typeof bookmark.category !== "string" ||
+      typeof bookmark.is_favorite !== "boolean"
     ) {
       throw "You must specify a string or boolean";
     }
