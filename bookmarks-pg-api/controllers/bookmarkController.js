@@ -53,7 +53,7 @@ bookmarks.delete("/:id", async (req, res) => {
     if (deletedBookmark["id"]) {
       res.status(200).json(deletedBookmark);
     } else {
-      console.log(`Database error: ${deletedBookmark}`);
+      console.log(`Database error: ${bookmark}`);
       throw `Could not delete bookmark with id: ${id}`;
     }
   } catch (err) {
@@ -72,7 +72,7 @@ bookmarks.put("/:id", async (req, res) => {
     if (updatedBookmark["id"]) {
       res.status(200).json(updatedBookmark);
     } else {
-      console.log(`Database error: ${deletedBookmark}`);
+      console.log(`Database error: ${bookmark}`);
       throw `Could not update bookmark with id: ${id}`;
     }
   } catch (err) {
